@@ -4,7 +4,7 @@ const buttonNode=document.querySelector('.js-button');
 
 buttonNode.addEventListener('click', function() {
     if (inputNode.value==='') {
-        console.log('пустая строка в поле ввода');
+        return;
     }
     const expense=parseInt (inputNode.value);
     expenses.push(expense);
