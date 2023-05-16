@@ -3,6 +3,6 @@ const inputNode=document.querySelector('.js-input');
 const buttonNode=document.querySelector('.js-button');
 
 buttonNode.addEventListener('click', function() {
-    const expense=inputNode.value;
+    const expense=parseInt (inputNode.value);
     expenses.push(expense);
 });
