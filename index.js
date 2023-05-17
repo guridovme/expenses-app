@@ -18,5 +18,5 @@ buttonNode.addEventListener('click', function() {
     expenses.push(expense);
 
     // 2. Выведем новый список трат
-    
+    historyNode.innerText = expenses;
 });
