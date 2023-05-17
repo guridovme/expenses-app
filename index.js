@@ -17,7 +17,15 @@ buttonNode.addEventListener('click', function() {
     // 2. Сохраняем трату в список
     expenses.push(expense);
 
-    // 2. Выведем новый список трат
+    // 3. Выведем новый список трат
+    let expensesListHTML = '';
+
+    expenses.forEach(element => {
+        const elementHTML = `<li>${expense}</li>`;
+        expensesListHTML += elementHTML;
+    });
+    
+    
     const html=`<ol><li>${expense}</li></ol>`;
-    historyNode.innerHtml = html;
+    historyNode.innerHtml = =`<ol>${expensesListHTML}</ol>`;
 }); 
