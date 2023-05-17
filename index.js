@@ -24,5 +24,5 @@ buttonNode.addEventListener('click', function() {
         expensesListHTML += `<li>${element}</li>`;
     }); 
     
-    historyNode.innerHtml = `<ol>${expensesListHTML}</ol>`;
+    historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
 }); 
