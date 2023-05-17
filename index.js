@@ -18,5 +18,6 @@ buttonNode.addEventListener('click', function() {
     expenses.push(expense);
 
     // 2. Выведем новый список трат
-    historyNode.innerText = expenses;
-});
+    const html=`<ol><li>${expense}</li></ol>`;
+    historyNode.innerHtml = html;
+}); 
