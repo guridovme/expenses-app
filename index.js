@@ -31,6 +31,8 @@ buttonNode.addEventListener('click', function() {
 
     expenses.forEach(element => {
         sum += element;
-    });  
+    });
+    
+    sumNode.innerText = sum;
 
 }); 
