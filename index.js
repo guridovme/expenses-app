@@ -23,9 +23,9 @@ buttonNode.addEventListener('click', function() {
     expenses.forEach(element => {
         const elementHTML = `<li>${expense}</li>`;
         expensesListHTML += elementHTML;
-    });
+    }); 
     
     
     const html=`<ol><li>${expense}</li></ol>`;
-    historyNode.innerHtml = =`<ol>${expensesListHTML}</ol>`;
+    historyNode.innerHtml = `<ol>${expensesListHTML}</ol>`;
 }); 
