@@ -1,9 +1,13 @@
+const LIMIT = 10000;
 const expenses=[];
 
 const inputNode=document.querySelector('.js-input');
 const buttonNode=document.querySelector('.js-button');
 const historyNode=document.querySelector('.js-history');
 const sumNode = document.querySelector('.js-sum');
+const limitNode = document.querySelector('.js-limit');
+
+limitNode.innerText = LIMIT;
 
 buttonNode.addEventListener('click', function() {
     // 1. Получаем значение из поля ввода
