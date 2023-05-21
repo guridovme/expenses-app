@@ -42,7 +42,7 @@ buttonNode.addEventListener('click', function() {
 
     // 3. Сравнение с лимитом и вывод статуса
     if (sum<=LIMIT) {
-        statusNode.innerText = 'все херошо';
+        statusNode.innerText = 'все хорошо';
     } else {
         statusNode.innerText = 'все плохо';
     }
