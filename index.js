@@ -6,6 +6,7 @@ const buttonNode=document.querySelector('.js-button');
 const historyNode=document.querySelector('.js-history');
 const sumNode = document.querySelector('.js-sum');
 const limitNode = document.querySelector('.js-limit');
+const statusNode = document.querySelector('.js-status');
 
 limitNode.innerText = LIMIT;
 
@@ -38,5 +39,12 @@ buttonNode.addEventListener('click', function() {
     });
     
     sumNode.innerText = sum;
+
+    // 3. Сравнение с лимитом и вывод статуса
+    if (sum<=LIMIT) {
+        statusNode.innerText = 'все херошо';
+    } else {
+        statusNode.innerText = 'все плохо';
+    }
 
 }); 
