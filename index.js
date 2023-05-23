@@ -45,6 +45,7 @@ buttonNode.addEventListener('click', function() {
         statusNode.innerText = 'все хорошо';
     } else {
         statusNode.innerText = 'все плохо';
+        statusNode.classList.add('status_red');
     }
 
 }); 
