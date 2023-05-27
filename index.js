@@ -1,5 +1,9 @@
 const LIMIT = 10000;
-const expenses=[];
+const CURRENCY ='руб.';
+const STATUS_IN_LIMIT = 'все хорошо';
+const STATUS_OUT_OF_LIMIT = 'все плохо';
+const STATUS_OUT_OF_LIMIT_CLASSNAME = 'status_red';
+
 
 const inputNode=document.querySelector('.js-input');
 const buttonNode=document.querySelector('.js-button');
@@ -8,7 +12,17 @@ const sumNode = document.querySelector('.js-sum');
 const limitNode = document.querySelector('.js-limit');
 const statusNode = document.querySelector('.js-status');
 
-limitNode.innerText = LIMIT;
+
+const expenses=[];
+
+
+init();
+
+function init() {
+    limitNode.innerText = LIMIT;
+    statusNode.innerText = STATUS_IN_LIMIT; 
+    sumNode.innerText = 0;
+};
 
 buttonNode.addEventListener('click', function() {
     // 1. Получаем значение из поля ввода
@@ -26,7 +40,7 @@ buttonNode.addEventListener('click', function() {
     let expensesListHTML = '';
 
     expenses.forEach(element => {
-        expensesListHTML += `<li>${element} руб.</li>`;
+        expensesListHTML += `<li>${element} ${CURRENCY}</li>`;
     }); 
     
     historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
@@ -42,10 +56,10 @@ buttonNode.addEventListener('click', function() {
 
     // 3. Сравнение с лимитом и вывод статуса
     if (sum<=LIMIT) {
-        statusNode.innerText = 'все хорошо';
+        statusNode.innerText = STATUS_IN_LIMIT;
     } else {
-        statusNode.innerText = 'все плохо';
-        statusNode.classList.add('status_red');
+        statusNode.innerText = STATUS_OUT_OF_LIMIT;
+        statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
     }
 
 }); 
