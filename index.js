@@ -16,13 +16,9 @@ const statusNode = document.querySelector('.js-status');
 const expenses=[];
 
 
-init();
+init(expenses);
 
-function init() {
-    limitNode.innerText = LIMIT;
-    statusNode.innerText = STATUS_IN_LIMIT; 
-    sumNode.innerText = 0;
-};
+
 
 buttonNode.addEventListener('click', function() {
     // 1. Получаем значение из поля ввода
@@ -63,3 +59,20 @@ buttonNode.addEventListener('click', function() {
     }
 
 }); 
+
+function init(expenses) {
+    limitNode.innerText = LIMIT;
+    statusNode.innerText = STATUS_IN_LIMIT; 
+    sumNode.innerText = calculateExpenses(expenses);
+};
+
+function calculateExpenses(expenses) {
+    let sum = 0;
+
+    expenses.forEach(element => {
+        sum += element;
+    });
+
+    return sum;
+
+}
