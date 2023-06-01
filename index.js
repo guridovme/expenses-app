@@ -21,42 +21,17 @@ init(expenses);
 
 
 buttonNode.addEventListener('click', function() {
-    // 1. Получаем значение из поля ввода
-    if (!inputNode.value) {
+    const expense = getExpanseFromUser();
+    if (!expense) {
+
         return;
     }
-
-    const expense=parseInt (inputNode.value);
-    inputNode.value='';
-
-    // 2. Сохраняем трату в список
-    expenses.push(expense);
-
-    // 3. Выведем новый список трат
-    let expensesListHTML = '';
-
-    expenses.forEach(element => {
-        expensesListHTML += `<li>${element} ${CURRENCY}</li>`;
-    }); 
     
-    historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
+    trackExpanse(expense);
 
-    // 3. Посчитать сумму и вывести ее
-    let sum = 0;
+    render(expenses);
 
-    expenses.forEach(element => {
-        sum += element;
-    });
     
-    sumNode.innerText = sum;
-
-    // 3. Сравнение с лимитом и вывод статуса
-    if (sum<=LIMIT) {
-        statusNode.innerText = STATUS_IN_LIMIT;
-    } else {
-        statusNode.innerText = STATUS_OUT_OF_LIMIT;
-        statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
-    }
 
 }); 
 
@@ -65,6 +40,31 @@ function init(expenses) {
     statusNode.innerText = STATUS_IN_LIMIT; 
     sumNode.innerText = calculateExpenses(expenses);
 };
+
+function trackExpanse(expense) {
+    expenses.push(expense);
+}
+
+function getExpanseFromUser() {
+    if (!inputNode.value) {
+        return null;
+    }
+
+    const expense=parseInt (inputNode.value);
+
+    clearInput();
+
+    inputNode.value='';
+
+    return expense;
+
+}
+
+function clearInput() {
+
+    inputNode.value='';
+}
+
 
 function calculateExpenses(expenses) {
     let sum = 0;
@@ -75,4 +75,37 @@ function calculateExpenses(expenses) {
 
     return sum;
 
+}
+
+function render (expenses){
+    const sum = calculateExpenses(expenses);
+    renderHistory(expenses);
+    renderSum(sum);
+    renderStatus(sum);
+
+}
+
+
+function renderHistory(expenses) {
+    let expensesListHTML = '';
+
+    expenses.forEach(element => {
+        expensesListHTML += `<li>${element} ${CURRENCY}</li>`;
+    }); 
+    
+    historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
+}
+function renderSum(sum) {
+
+    sumNode.innerText = sum;
+
+}
+function renderStatus(sum){
+    
+    if (sum<=LIMIT) {
+        statusNode.innerText = STATUS_IN_LIMIT;
+    } else {
+        statusNode.innerText = STATUS_OUT_OF_LIMIT;
+        statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
+    }
 }
