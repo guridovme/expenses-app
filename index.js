@@ -12,13 +12,9 @@ const sumNode = document.querySelector('.js-sum');
 const limitNode = document.querySelector('.js-limit');
 const statusNode = document.querySelector('.js-status');
 
-
 const expenses=[];
 
-
 init(expenses);
-
-
 
 buttonNode.addEventListener('click', function() {
     const expense = getExpanseFromUser();
@@ -30,9 +26,6 @@ buttonNode.addEventListener('click', function() {
     trackExpanse(expense);
 
     render(expenses);
-
-    
-
 }); 
 
 function init(expenses) {
