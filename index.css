@@ -1,4 +1,9 @@
 body {font-family: 'Inter', sans-serif;}
+h1 {
+    font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+}
 .expenses {
 margin: auto;
 width: 700px;
