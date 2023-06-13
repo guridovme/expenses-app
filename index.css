@@ -1,15 +1,16 @@
 body {
     font-family: 'Inter', sans-serif;
-}
-h1 {
-    font-weight: 700;
     font-size: 32px;
     line-height: 39px;
 }
+h1 {
+    font-weight: 700;
+    
+}
 .expenses {
     margin: auto;
-    width: 700px;
-    padding: 100px;
+    width: 1000px;
+    padding: 67px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
