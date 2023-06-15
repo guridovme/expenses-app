@@ -5,6 +5,7 @@ body {
 }
 h1 {
     font-weight: 700;
+    margin-bottom: 41px;
 }
 .wrapper{
     width: 1016px;
