@@ -23,6 +23,14 @@ h1 {
 .expensesInput{
     width:484px;
 }
+.moneyInput{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 17px 9px 22px;
+    border: 1px solid #000000;
+}
+
 .addButton {
     display: block;
     padding: 10px 110px;
