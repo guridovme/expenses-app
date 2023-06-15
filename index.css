@@ -29,6 +29,12 @@ h1 {
     padding: 10px 17px 9px 22px;
     border: 1px solid #000000;
 }
+.moneyInput__input {
+    width: 100%;
+    border: none;
+    font-size: inherit;
+}
+
 .rub::after{
     content: " руб.";
 }
