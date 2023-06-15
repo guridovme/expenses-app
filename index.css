@@ -10,9 +10,10 @@ h1 {
 .wrapper{
     width: 1000px;
     padding: 67px;
+    margin: auto;
 }
 .expenses {
-    margin: auto;
+   
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
