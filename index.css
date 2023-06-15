@@ -5,15 +5,13 @@ body {
 }
 h1 {
     font-weight: 700;
-    
 }
 .wrapper{
-    width: 1000px;
+    width: 1016px;
     padding: 67px;
     margin: auto;
 }
 .expenses {
-   
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -30,7 +28,9 @@ h1 {
     padding: 10px 17px 9px 22px;
     border: 1px solid #000000;
 }
-
+.rub::after{
+    content: " руб.";
+}
 .addButton {
     display: block;
     padding: 10px 110px;
