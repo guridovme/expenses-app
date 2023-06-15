@@ -23,12 +23,21 @@
         
         <button class="js-button addButton">Добавить</button>
 
-        <p>Лимит: <span class="js-limit"></span> руб.</p>    
-        <p>Сумма: <span class="js-sum"></span> руб.</p>    
-        <p>Статус: <span class="js-status status"></span></p>   
-        <h2>История трат</h2>
-        <div class="js-history">
-       
+        <div class="stats">
+            <div class="stats__limit">
+                <span class="label">Лимит:</span> <span class="js-limit rub">    
+            </div>
+            <div class="stats__total">
+                <span class="label">Сумма:</span> <span class="js-sum rub"> 
+            </div>  
+            <div class="stats__status">
+                <span class="label">Статус:</span> <span class="js-status status"></span>   
+            </div>
+        </div>
+        
+        <div class="history">
+            <h2>История трат</h2>
+            <div class="js-history"></div>
         </div>
     </div>
     </section>
