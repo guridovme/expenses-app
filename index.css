@@ -7,10 +7,12 @@ h1 {
     font-weight: 700;
     
 }
-.expenses {
-    margin: auto;
+.wrapper{
     width: 1000px;
     padding: 67px;
+}
+.expenses {
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
