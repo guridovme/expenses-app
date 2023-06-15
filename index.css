@@ -18,7 +18,18 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 28px;
-    row-gap: 23px;
+    row-gap: 43px;
+}
+.expensesInput{
+    width:484px;
+}
+.addButton {
+    display: block;
+    padding: 10px 110px;
+    font-size: inherit;
+    color: #ffffff;
+    background-color: #0094ff;
+    border: none;
 }
 .status {
     color: green;
