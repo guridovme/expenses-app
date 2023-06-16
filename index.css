@@ -34,7 +34,9 @@ h1 {
     border: none;
     font-size: inherit;
 }
-
+.label{
+    font-weight: 700;
+}
 .rub::after{
     content: " руб.";
 }
@@ -45,6 +47,12 @@ h1 {
     color: #ffffff;
     background-color: #0094ff;
     border: none;
+}
+.stats{
+    width: 484px;
+}
+.stats__total{
+    margin-bottom: 35px;
 }
 .status {
     color: green;
