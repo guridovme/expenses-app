@@ -54,6 +54,10 @@ h1 {
 .stats__total{
     margin-bottom: 35px;
 }
+ol{
+    list-style: decimal;
+}
+
 .status {
     color: green;
 }
