@@ -56,7 +56,7 @@ h1 {
 }
 ol{
     list-style: decimal;
-    list-style-position: outside;
+    list-style-position: inside;
 }
 
 .status {
