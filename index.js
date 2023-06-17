@@ -17,6 +17,17 @@ let expenses=[];
 
 init(expenses);
 
+const calculateExpenses = () => {
+    let sum = 0;
+
+    expenses.forEach((expense) => {
+        sum += expense;
+    });
+
+    return sum;
+
+};
+
 buttonNode.addEventListener('click', function() {
     const expense = getExpanseFromUser();
     if (!expense) {
@@ -60,16 +71,7 @@ function clearInput() {
 };
 
 
-const calculateExpenses = () => {
-    let sum = 0;
 
-    expenses.forEach((expense) => {
-        sum += expense;
-    });
-
-    return sum;
-
-};
 
 function render (expenses){
     const sum = calculateExpenses(expenses);
