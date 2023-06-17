@@ -13,7 +13,7 @@ const limitNode = document.querySelector('.js-limit');
 const statusNode = document.querySelector('.js-status');
 const clearButtonNode = document.getElementById("clearButton");
 
-let expenses=[];
+const expenses=[];
 
 init(expenses);
 
