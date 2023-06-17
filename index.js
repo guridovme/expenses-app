@@ -105,7 +105,7 @@ function renderStatus(sum){
 }
 
 const clearButtonHandler = () => {
-    expenses = [];
+    expenses=[];
     render();
 };
 
