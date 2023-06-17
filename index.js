@@ -28,6 +28,16 @@ const calculateExpenses = () => {
 
 };
 
+function renderStatus(sum){
+    
+    if (sum<=LIMIT) {
+        statusNode.innerText = STATUS_IN_LIMIT;
+    } else {
+        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} ${CURRENCY})`;
+        statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
+    }
+};
+
 buttonNode.addEventListener('click', function() {
     const expense = getExpanseFromUser();
     if (!expense) {
@@ -96,15 +106,7 @@ function renderSum(sum) {
     sumNode.innerText = sum;
 
 };
-function renderStatus(sum){
-    
-    if (sum<=LIMIT) {
-        statusNode.innerText = STATUS_IN_LIMIT;
-    } else {
-        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} ${CURRENCY})`;
-        statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
-    }
-};
+
 
 const clearButtonHandler = () => {
     expenses=[];
