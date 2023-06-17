@@ -16,7 +16,6 @@ const limit = parseInt(limitNode.innerText);
 
 const getTotal = () => {
     let sum = 0;
-
     expenses.forEach((expense) => {
         sum += expense;
     });
@@ -28,13 +27,41 @@ const renderStatus = () => {
     const total = getTotal(expenses);
     totalValueNode.innerText = total;
 
-    if (sum<=LIMIT) {
+    if (total <= limit) {
         statusNode.innerText = STATUS_IN_LIMIT;
     } else {
         statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} ${CURRENCY})`;
         statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
     }
 };
+
+function renderHistory(expenses) {
+    historyList.innerHTML = '';
+
+    expenses.forEach((expense) => {
+        const historyItem = document.createElement("li");
+        historyItem.className = "rub";
+        historyItem.innerText = expense;
+
+        historyList.appendChild(historyItem) ;
+    }); 
+};
+
+
+function render (expenses){
+    const sum = calculateExpenses(expenses);
+    renderHistory(expenses);
+    renderSum(sum);
+    renderStatus(sum);
+
+};
+
+
+
+
+
+
+
 
 buttonNode.addEventListener('click', function() {
     const expense = getExpanseFromUser();
@@ -81,24 +108,11 @@ function clearInput() {
 
 
 
-function render (expenses){
-    const sum = calculateExpenses(expenses);
-    renderHistory(expenses);
-    renderSum(sum);
-    renderStatus(sum);
-
-};
 
 
-function renderHistory(expenses) {
-    let expensesListHTML = '';
 
-    expenses.forEach(element => {
-        expensesListHTML += `<li>${element} ${CURRENCY}</li>`;
-    }); 
-    
-    historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
-};
+
+
 function renderSum(sum) {
 
     sumNode.innerText = sum;
