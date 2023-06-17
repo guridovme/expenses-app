@@ -13,7 +13,7 @@ const limitNode = document.querySelector('.js-limit');
 const statusNode = document.querySelector('.js-status');
 const clearButtonNode = document.getElementById("clearButton");
 
-const expenses=[];
+let expenses=[];
 
 init(expenses);
 
@@ -37,7 +37,7 @@ function init(expenses) {
 
 function trackExpanse(expense) {
     expenses.push(expense);
-}
+};
 
 function getExpanseFromUser() {
     if (!inputNode.value) {
@@ -52,24 +52,24 @@ function getExpanseFromUser() {
 
     return expense;
 
-}
+};
 
 function clearInput() {
 
     inputNode.value='';
-}
+};
 
 
-function calculateExpenses(expenses) {
+const calculateExpenses = () => {
     let sum = 0;
 
-    expenses.forEach(element => {
-        sum += element;
+    expenses.forEach((expense) => {
+        sum += expense;
     });
 
     return sum;
 
-}
+};
 
 function render (expenses){
     const sum = calculateExpenses(expenses);
@@ -77,7 +77,7 @@ function render (expenses){
     renderSum(sum);
     renderStatus(sum);
 
-}
+};
 
 
 function renderHistory(expenses) {
@@ -88,12 +88,12 @@ function renderHistory(expenses) {
     }); 
     
     historyNode.innerHTML = `<ol>${expensesListHTML}</ol>`;
-}
+};
 function renderSum(sum) {
 
     sumNode.innerText = sum;
 
-}
+};
 function renderStatus(sum){
     
     if (sum<=LIMIT) {
@@ -102,7 +102,7 @@ function renderStatus(sum){
         statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} ${CURRENCY})`;
         statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
     }
-}
+};
 
 const clearButtonHandler = () => {
     expenses=[];
