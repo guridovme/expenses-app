@@ -58,7 +58,15 @@ ol{
     list-style: decimal;
     list-style-position: inside;
 }
-
+.clearButton{
+    width:484px;
+    display: block;
+    padding: 10px 110px;
+    font-size: inherit;
+    color: #ffffff;
+    background-color: #ff0000;
+    border: none;
+}
 .status {
     color: green;
 }
