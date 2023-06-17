@@ -98,7 +98,7 @@ function renderStatus(sum){
     if (sum<=LIMIT) {
         statusNode.innerText = STATUS_IN_LIMIT;
     } else {
-        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (-${sum - LIMIT} руб.)`;
+        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} руб.)`;
         statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
     }
 }
