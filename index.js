@@ -11,6 +11,7 @@ const historyNode=document.querySelector('.js-history');
 const sumNode = document.querySelector('.js-sum');
 const limitNode = document.querySelector('.js-limit');
 const statusNode = document.querySelector('.js-status');
+const clearButtonNode = document.getElementById("clearButton");
 
 const expenses=[];
 
@@ -98,7 +99,14 @@ function renderStatus(sum){
     if (sum<=LIMIT) {
         statusNode.innerText = STATUS_IN_LIMIT;
     } else {
-        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} руб.)`;
+        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} ${CURRENCY}.)`;
         statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
     }
 }
+
+const clearButtonHandler = () => {
+    expenses = [];
+    render();
+};
+
+clearButtonNode.addEventListener("click",clearButtonHandler);
