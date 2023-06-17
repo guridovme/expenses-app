@@ -1,23 +1,20 @@
-const LIMIT = 10000;
 const CURRENCY ='руб.';
 const STATUS_IN_LIMIT = 'все хорошо';
 const STATUS_OUT_OF_LIMIT = 'все плохо';
 const STATUS_OUT_OF_LIMIT_CLASSNAME = 'status_red';
 
-
-const inputNode=document.querySelector('.js-input');
-const buttonNode=document.querySelector('.js-button');
-const historyNode=document.querySelector('.js-history');
-const sumNode = document.querySelector('.js-sum');
-const limitNode = document.querySelector('.js-limit');
-const statusNode = document.querySelector('.js-status');
+const inputNode=document.getElementById("expenseInput");
+const addButtonNode=document.getElementById("addButton");
 const clearButtonNode = document.getElementById("clearButton");
+const limitNode = document.getElementById("limitValue");
+const totalValueNode = document.getElementById("totalValue");
+const statusNode = document.getElementById("statusText");
+const historyList=document.getElementById("historyList");
 
 let expenses=[];
+const limit = parseInt(limitNode.innerText);
 
-init(expenses);
-
-const calculateExpenses = () => {
+const getTotal = () => {
     let sum = 0;
 
     expenses.forEach((expense) => {
@@ -25,11 +22,12 @@ const calculateExpenses = () => {
     });
 
     return sum;
-
 };
 
-function renderStatus(sum){
-    
+const renderStatus = () => {
+    const total = getTotal(expenses);
+    totalValueNode.innerText = total;
+
     if (sum<=LIMIT) {
         statusNode.innerText = STATUS_IN_LIMIT;
     } else {
