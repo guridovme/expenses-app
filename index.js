@@ -35,8 +35,8 @@ const renderStatus = () => {
     }
 };
 
-function renderHistory(expenses) {
-    historyList.innerHTML = '';
+const renderHistory = () => {
+    historyList.innerHTML = "";
 
     expenses.forEach((expense) => {
         const historyItem = document.createElement("li");
@@ -48,18 +48,17 @@ function renderHistory(expenses) {
 };
 
 
-function render (expenses){
-    const sum = calculateExpenses(expenses);
-    renderHistory(expenses);
-    renderSum(sum);
-    renderStatus(sum);
-
+const render = () => {
+    renderStatus();
+    renderHistory();
 };
 
 
+const getExpenseFromUser = () => parseInt (inputNode.value);
 
-
-
+const clearInput = () => {
+    inputNode.value="";
+};
 
 
 
@@ -85,25 +84,9 @@ function trackExpanse(expense) {
     expenses.push(expense);
 };
 
-function getExpanseFromUser() {
-    if (!inputNode.value) {
-        return null;
-    }
 
-    const expense=parseInt (inputNode.value);
 
-    clearInput();
 
-    inputNode.value='';
-
-    return expense;
-
-};
-
-function clearInput() {
-
-    inputNode.value='';
-};
 
 
 
