@@ -28,23 +28,23 @@ const renderStatus = () => {
     totalValueNode.innerText = total;
 
     if (total <= limit) {
+        
         statusNode.innerText = STATUS_IN_LIMIT;
+        statusNode.className = "stats__statusText_positive";
     } else {
-        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${LIMIT - sum} ${CURRENCY})`;
+        statusNode.innerText = `${STATUS_OUT_OF_LIMIT} (${limit - total} ${CURRENCY})`;
         statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
     }
 };
 
 const renderHistory = () => {
     historyList.innerHTML = "";
-
     expenses.forEach((expense) => {
-        const historyItem = document.createElement("li");
-        historyItem.className = "rub";
-        historyItem.innerText = expense;
-
-        historyList.appendChild(historyItem) ;
-    }); 
+    const historyItem = document.createElement("li");
+    historyItem.className = "rub";
+    historyItem.innerText = expense;
+    historyList.appendChild(historyItem);
+  });
 };
 
 
@@ -52,7 +52,6 @@ const render = () => {
     renderStatus();
     renderHistory();
 };
-
 
 const getExpenseFromUser = () => parseInt (inputNode.value);
 
