@@ -60,52 +60,21 @@ const clearInput = () => {
     inputNode.value="";
 };
 
-
-
-buttonNode.addEventListener('click', function() {
-    const expense = getExpanseFromUser();
+function addButtonHandler() {
+    const expense = getExpenseFromUser();
     if (!expense) {
-
-        return;
+    return;
     }
-    
-    trackExpanse(expense);
-
-    render(expenses);
-}); 
-
-function init(expenses) {
-    limitNode.innerText = LIMIT;
-    statusNode.innerText = STATUS_IN_LIMIT; 
-    sumNode.innerText = calculateExpenses(expenses);
-};
-
-function trackExpanse(expense) {
     expenses.push(expense);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-function renderSum(sum) {
-
-    sumNode.innerText = sum;
-
-};
-
+    console.log(expenses);
+    render();
+    clearInput();
+}
 
 const clearButtonHandler = () => {
     expenses=[];
     render();
 };
 
+addButtonNode.addEventListener("click",addButtonHandler);
 clearButtonNode.addEventListener("click",clearButtonHandler);
