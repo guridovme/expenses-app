@@ -20,7 +20,7 @@ h1 {
     row-gap: 43px;
 }
 .expensesInput{
-    width:377px;
+    width:264px;
 }
 .moneyInput{
     width: 100%;
@@ -42,8 +42,9 @@ h1 {
 }
 .categorySelect{
     font-size: inherit;
-    height: 58px;
+    height: 60px;
     width: 200px;
+    border: 1px solid #000000;
 }
 .addButton {
     display: block;
