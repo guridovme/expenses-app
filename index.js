@@ -47,19 +47,42 @@ const renderHistory = () => {
   });
 };
 
-
+//Отрисовывает (обновляет) весь интерфейс (в нашем случае - историю, всего, статус)
 const render = () => {
+    //вызываем функцию обновления статуса и "всего"
     renderStatus();
+    //вызываем функцию обновления истории
     renderHistory();
 };
 
+//Возвращает введенную пользователем сумму
+
 const getExpenseFromUser = () => parseInt (inputNode.value);
+
+// функция очистки поля ввода суммы
+// на вход получает переменную input, в которой мы ожидаем html элемент input
+
+// альтернативы
+/*
+function clearInput(input) {
+    input.value = "";
+}
+*/
+
 
 const clearInput = () => {
     inputNode.value="";
 };
 
+/*
+const clearInput = (input) => {
+    input.value = "";
+}
+*/
+
+// функция-обработчик, которая будет вызвана при нажатии на кнопку Добавить
 function addButtonHandler() {
+    // сохранияем в переменную currentAmount введенную сумму
     const expense = getExpenseFromUser();
     if (!expense) {
     return;
@@ -70,10 +93,12 @@ function addButtonHandler() {
     clearInput();
 }
 
+// функция-обработчик кнопки сбросить
 const clearButtonHandler = () => {
     expenses=[];
     render();
 };
 
+// Привязка функций-обработчиков к кнопкам
 addButtonNode.addEventListener("click",addButtonHandler);
 clearButtonNode.addEventListener("click",clearButtonHandler);
