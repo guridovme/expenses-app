@@ -40,6 +40,11 @@ h1 {
 .rub::after{
     content: " руб.";
 }
+.categorySelect{
+    font-size: inherit;
+    height: 58px;
+    width: 200px;
+}
 .addButton {
     display: block;
     padding: 10px 110px;
