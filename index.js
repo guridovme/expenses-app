@@ -123,18 +123,41 @@ const clearInput = (input) => {
 // функция-обработчик, которая будет вызвана при нажатии на кнопку Добавить
 function addButtonHandler() {
     // сохранияем в переменную currentAmount введенную сумму
-    const expense = getExpenseFromUser();
-    if (!expense) {
+    const currentAmount = getExpenseFromUser();
+    if (!currentAmount) {
     return;
     }
-    expenses.push(expense);
-    console.log(expenses);
+
+    // сохраняем в переменную currentCategory выбранную категорию
+    const currentCategory = getSelectedCategory();
+
+    // если текущая Категория равна значению Категория
+    if (currentCategory === "Категория") {
+    // тогда выйди из функции, т.к. это значение говорит нам о том  
+    // что пользователь не выбрал категорию
+    return;
+    }
+ 
+    // из полученных переменных собираем объект newExpense(новыйРасход) 
+    // который состоит из двух полей - amount, в которое записано значение currentAmount
+    // и category, в которое записано значение currentCategory
+    const newExpense = {amount: currentAmount, category: currentCategory};
+    console.log(newExpense);
+
+    //Добавляем наш новыйРасход в массив расходов
+    expenses.push(newExpense);
+    
+    // console.log(expenses);
+
+    // перерисовываем интерфейс
     render();
-    clearInput();
+
+    // сбрасываем введенную сумму
+    clearInput(inputNode);
 }
 
-// функция-обработчик кнопки сбросить
-const clearButtonHandler = () => {
+// функция-обработчик кнопки Сбросить расходы
+function clearButtonHandler() {
     expenses=[];
     render();
 };
