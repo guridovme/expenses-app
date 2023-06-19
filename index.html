@@ -18,7 +18,14 @@
         <div class="expensesInput">
             <div class="moneyInput rub">   
                 <input type="number" min="1" class="moneyInput__input" id="expenseInput">
-            </div>        
+            </div> 
+            <select id="categorySelect" class="categorySelect">
+                <option hidden disabled selected value="Категория">Категория</option>
+                <option value="Продукты">Продукты</option>
+                <option value="Кафе">Кафе</option>
+                <option>Квартира</option>    
+                <option>Авто</option>
+            </select>
         </div>
         
         <button class="addButton" id="addButton">Добавить</button>
