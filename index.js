@@ -110,15 +110,15 @@ function clearInput(input) {
 */
 
 
-const clearInput = function (input) {
-    inputNode.value="";
-};
+// const clearInput = function (input) {
+//     inputNode.value="";
+// };
 
-/*
+
 const clearInput = (input) => {
     input.value = "";
 }
-*/
+
 
 // функция-обработчик, которая будет вызвана при нажатии на кнопку Добавить
 function addButtonHandler() {
