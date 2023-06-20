@@ -74,6 +74,8 @@ ol{
 }
 .stats__changeLimitBtn {
     cursor: pointer;
+    width: 42px;
+    height: 42px;
 }
 .stats__statusText_positive {
     color: green;
