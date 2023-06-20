@@ -72,7 +72,7 @@ function renderHistory () {
 
     // снова создаем шаблонную строку
     // формата "категория" - "сумма" (а не наоборот, чтобы не усложнять html)
-    historyItem.innerText = `${expense.category} - ${expense.amount}`;
+    historyItem.innerText = `${expense.amount} - ${expense.category}`;
 
     // берем наш li из памяти и вставляем в документ, в конец historyList
     historyList.appendChild(historyItem);
