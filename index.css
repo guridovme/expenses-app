@@ -72,6 +72,9 @@ ol{
     background-color: #ff0000;
     border: none;
 }
+.stats__changeLimitBtn {
+    cursor: pointer;
+}
 .stats__statusText_positive {
     color: green;
 }
