@@ -68,11 +68,11 @@ function renderHistory () {
     const historyItem = document.createElement("li");
 
     // через свойство className также можно прописывать классы
-    historyItem.className = "rub";
+    // historyItem.className = "rub";
 
     // снова создаем шаблонную строку
     // формата "категория" - "сумма" (а не наоборот, чтобы не усложнять html)
-    historyItem.innerText = `${expense.amount} - ${expense.category}`;
+    historyItem.innerText = `${expense.amount} ${CURRENCY} - ${expense.category}`;
 
     // берем наш li из памяти и вставляем в документ, в конец historyList
     historyList.appendChild(historyItem);
