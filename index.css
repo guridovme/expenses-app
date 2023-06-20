@@ -48,12 +48,16 @@ h1 {
 }
 .addButton {
     display: block;
+    width: 370px;
     padding: 10px 110px;
     font-size: inherit;
     color: #ffffff;
     background-color: #0094ff;
     border: none;
 }
+.history {
+    width: 370px;
+}   
 .stats{
     width: 484px;
 }
