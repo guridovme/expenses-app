@@ -111,7 +111,7 @@ function clearInput(input) {
 
 
 const clearInput = function (input) {
-    inputNode.value="";
+    input.value="";
 };
 
 
