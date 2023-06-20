@@ -184,6 +184,8 @@ function changeLimitHandler() {
     // а также прописываем это значение в нашу переменную с лимитом
     limit = newLimitValue;
 
+    localStorage.setItem('limit',newLimitValue);
+
     // Обновляем интерфейс
     render();
 }
