@@ -3,6 +3,7 @@ const CURRENCY ='руб.';
 const STATUS_IN_LIMIT = 'все хорошо';
 const STATUS_OUT_OF_LIMIT = 'все плохо';
 const STATUS_OUT_OF_LIMIT_CLASSNAME = 'status_red';
+const CHANGE_LIMIT_TEXT = "Введите новый лимит";
 
 // Объявление переменных - ссылок на html элементы
 const inputNode=document.getElementById("expenseInput");
@@ -12,10 +13,11 @@ const clearButtonNode = document.getElementById("clearButton");
 const totalValueNode = document.getElementById("totalValue");
 const statusNode = document.getElementById("statusText");
 const historyList=document.getElementById("historyList");
-
+const changeLimitBtn = document.getElementById("changeLimitBtn");
+ 
 // Получает лимит из элемента HTML с id limitValue
 const limitNode = document.getElementById("limitValue");
-const limit = parseInt(limitNode.innerText);
+let limit = parseInt(limitNode.innerText);
 
 // Объявление нашей основной переменной
 // При запуске она содержит пустой массив
@@ -162,6 +164,31 @@ function clearButtonHandler() {
     render();
 };
 
+// функция обработчик (хендлер) кнопки изменения лимита
+function changeLimitHandler() {
+    // в переменную newLimit мы записываем результат выполнения функции prompt
+    // которой передаем параметр "Новый лимит"
+    // prompt вызывает встроенную в браузер модалку с инпутом
+    // а возвращает то, что ввел в инпут пользователь
+    const newLimit = prompt(CHANGE_LIMIT_TEXT);
+
+    // потому что там может быть строка
+    const newLimitValue = parseInt(newLimit);
+
+    if(!newLimitValue){
+        return;
+    }
+
+    // прописываем в html новое значение лимита
+    limitNode.innerText = newLimitValue;
+    // а также прописываем это значение в нашу переменную с лимитом
+    limit = newLimitValue;
+
+    // Обновляем интерфейс
+    render();
+}
+
 // Привязка функций-обработчиков к кнопкам
 addButtonNode.addEventListener("click",addButtonHandler);
 clearButtonNode.addEventListener("click",clearButtonHandler);
+changeLimitBtn.addEventListener("click",changeLimitHandler);
